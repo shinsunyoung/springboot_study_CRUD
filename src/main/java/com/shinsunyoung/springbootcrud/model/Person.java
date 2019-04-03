@@ -1,7 +1,5 @@
 package com.shinsunyoung.springbootcrud.model;
 
-import lombok.Builder;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,9 +16,4 @@ public class Person {
     @Column
     private int age;
 
-    @Builder
-    public Person(String name, int age){
-        this.name = name;
-        this.age = age;
-    }
 }
