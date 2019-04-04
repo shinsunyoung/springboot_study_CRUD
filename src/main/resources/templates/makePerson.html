@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title> SpringBoot : makePerson </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<h1>사람 추가하기(Create)</h1>
+<form action="#" th:action="@{/person}" th:object="${person}" method="post">
+    <p>Name : <input type="text" th:field="*{name}"/></p>
+    <p>Password : <input type="password" th:field="*{password}"/></p>
+    <p><input type="submit" value="추가하기"/> <input type="reset" value="새로 입력하기"/></p>
+</form>
+</body>
+</html>
