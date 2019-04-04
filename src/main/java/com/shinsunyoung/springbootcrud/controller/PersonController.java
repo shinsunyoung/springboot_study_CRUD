@@ -11,20 +11,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class PersonController {
-
     private final PersonService personService;
-
     @Autowired
-    public  PersonController(PersonService personService){
+    public PersonController(PersonService personService) {
         this.personService = personService;
     }
-
-    @RequestMapping(value = "")
+    @RequestMapping(value = "", method = RequestMethod.GET)
+    public String homePage(Model model) {
+        model.addAttribute("person", new Person());
+        return "greeting";
+    }
+    @RequestMapping(value = "/person", method = RequestMethod.POST)
     public String addPagePerson(@ModelAttribute Person person, Model model) {
         personService.createPerson(person);
         model.addAttribute("persons", personService.getAllPersons());
         return "result";
     }
-
-
 }
