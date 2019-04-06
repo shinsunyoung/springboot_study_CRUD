@@ -1,7 +1,9 @@
+# 자바 버전
 language: java
 jdk:
   - openjdk8
 
+# master 브랜치에 푸시 했을 때만 실행
 branches:
   only:
     - master
@@ -18,4 +20,4 @@ script: "./gradlew clean build"
 notifications:
   email:
     recipients:
-      - s2017i30@e-mirim.hs.kr
+      - << 메일 주소 >>
