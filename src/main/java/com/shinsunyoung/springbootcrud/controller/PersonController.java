@@ -16,13 +16,13 @@ public class PersonController {
     public PersonController(PersonService personService) {
         this.personService = personService;
     }
-    @RequestMapping(value = "", method = RequestMethod.GET)
+    @RequestMapping(value = "")
     public String homePage(Model model) {
         model.addAttribute("person", new Person());
         return "makePerson";
     }
 
-    @RequestMapping(value = "/person", method = RequestMethod.GET)
+    @RequestMapping(value = "/person")
     public String getPagePerson(Model model) {
         model.addAttribute("persons", personService.getAllPersons());
         return "result";
@@ -37,7 +37,6 @@ public class PersonController {
 
     @RequestMapping(value = "/person/delete/{id}")
     public String deletePagePerson(@PathVariable Long id) {
-        System.out.println("id=" + id);
         personService.deletePerson(id);
         return "redirect:/person";
     }

@@ -3,7 +3,6 @@ package com.shinsunyoung.springbootcrud.service;
 import com.shinsunyoung.springbootcrud.model.Person;
 import com.shinsunyoung.springbootcrud.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -26,7 +25,6 @@ public class PersonServiceImp implements PersonService {
 
     @Override
     public List<Person> getAllPersons() {
-
         return personRepository.findAll();
     }
 
