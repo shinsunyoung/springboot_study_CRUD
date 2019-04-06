@@ -5,22 +5,26 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
+<h2>리스트 보기(Read)</h2>
+
 <div th:if="${not #lists.isEmpty(persons)}">
-    <h2>리스트 보기(Read)</h2>
     <table class="glyphicon glyphicon-calendar">
         <tr>
             <th>Id</th>
             <th>Name</th>
             <th>Password</th>
+            <th>delete</th>
         </tr>
         <tr th:each="person : ${persons}">
             <td th:text="${person.id}"></td>
             <td th:text="${person.name}"></td>
             <td th:text="${person.password}"></td>
+            <td><a href="/person" th:href="@{'person/delete/' + ${person.id}} " th:field="*{person.id}">삭제</a></td>
         </tr>
     </table>
     <hr/>
-    <a href="/"><button>새로 만들기</button></a>
 </div>
+<a href="/"><button>새로 만들기</button></a>
+
 </body>
 </html>

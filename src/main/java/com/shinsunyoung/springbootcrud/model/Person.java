@@ -21,13 +21,6 @@ public class Person{
     private String name;
 
     @Column
-    private int age;
-
-//    @Builder
-//    public Person(String name, int age) {
-//        this.name = name;
-//        this.age = age;
-//    }
-
+    private String password;
 
 }

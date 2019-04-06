@@ -20,28 +20,8 @@ public class PersonServiceImp implements PersonService {
     }
 
     @Override
-    public Person getPerson(Long id) {
-        return personRepository.findOne(id);
-    }
-
-    @Override
-    public Person editPerson(Person person) {
-        return personRepository.save(person);
-    }
-
-    @Override
-    public void deletePerson(Person person) {
-        personRepository.delete(person);
-    }
-
-    @Override
     public void deletePerson(Long id) {
         personRepository.delete(id);
-    }
-
-    @Override
-    public List<Person> getAllPersons(int pageNumber, int pageSize) {
-        return personRepository.findAll(new PageRequest(pageNumber, pageSize)).getContent();
     }
 
     @Override
