@@ -19,7 +19,7 @@
             <td th:text="${person.id}"></td>
             <td th:text="${person.name}"></td>
             <td th:text="${person.password}"></td>
-            <td><a href="/person" th:href="@{'person/delete/' + ${person.id}} " th:field="*{person.id}">삭제</a></td>
+            <td><a href="/person" th:href="@{'person/delete/' + ${person.id}}">삭제</a></td>
         </tr>
     </table>
     <hr/>
